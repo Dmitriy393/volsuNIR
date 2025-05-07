@@ -1,0 +1,50 @@
+
+services:
+
+  web0:  
+    image: nginx:latest
+    ports:
+      - "8080:80" 
+    volumes:
+      - ./src:/var/www/html  
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf  
+    networks:
+      - php-network
+
+  db:  
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example  
+      MYSQL_DATABASE: shop  
+      MYSQL_USER: admin  
+      MYSQL_PASSWORD: Laboratory3306  
+    volumes:
+      - db_data:/var/lib/mysql 
+    networks:
+      - php-network
+
+  web2:  
+    image: nginx:latest
+    ports:
+      - "8081:80"  
+    volumes:
+      - ./media:/usr/share/nginx/html  
+    networks:
+      - php-network
+
+
+  php:
+    image: custom-php  
+    volumes:
+      - D:\Site\src:/var/www/html
+    networks:
+      - php-network
+
+
+volumes:
+  db_data:  
+
+networks:
+  php-network:  
+
+
