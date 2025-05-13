@@ -1,0 +1,84 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Контейнер для товаров */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Карточка продукта */
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    overflow: hidden;
+    width: 250px; /* Фиксированная ширина карточки */
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Эффект при наведении */
+}
+
+/* Изображение продукта */
+.product-image {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для всех изображений */
+    object-fit: cover; /* Обеспечивает обрезку изображения по размеру контейнера */
+}
+
+/* Заголовок и описание продукта */
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.price {
+    color: #e67e22; /* Цвет цены */
+    font-weight: bold;
+    margin: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px;
+}
+
+/* Пагинация */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+/* Загрузка */
+#loading {
+    text-align: center;
+    font-size: 18px;
+}
